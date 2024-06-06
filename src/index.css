@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&family=JetBrains+Mono&display=swap");
+@import url("https://fonts.cdnfonts.com/css/blanka");
+body {
+  margin: 0;
+  font-family: "Chakra Petch", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 0 solid #e5e7eb;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+.blanka {
+  font-family: "Blanka", sans-serif;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    border-radius: 15px;
+    height: 6px;
+    width: 8px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotateAnimation 2s linear infinite;
+  transform-origin: center;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  color: red;
+}
+
+::-webkit-scrollbar-track {
+  color: red;
+  background-color: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  color: red;
+  background-color: red;
+}
