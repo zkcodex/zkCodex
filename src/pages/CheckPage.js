@@ -9,6 +9,8 @@ import AddressLink from "../components/Other/AddressLink";
 import MainSearch from "../components/Other/MainSearch";
 import { fetchAllDataOP } from "../service/index";
 import Main from "../components/Cards/Main";
+import { FiRefreshCw, FiShare2 } from "react-icons/fi";
+import ShareCard from "../components/Modal/ShareCard";
 
 function CheckPage() {
   const { address: paramAddress } = useParams();
@@ -21,6 +23,8 @@ function CheckPage() {
   const [hasNftPass, setHasNftPass] = useState(false);
   const [loadingData, setLoadingData] = useState(true);
   const [error, setError] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
 
   useEffect(() => {
     if (addressFromUrl) {
@@ -49,17 +53,17 @@ function CheckPage() {
     }
   };
 
-  // const handleModalOpen = () => {
-  //   setModalOpen(true);
-  // };
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
 
-  // const handleModalClose = () => {
-  //   setModalOpen(false);
-  // };
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
 
-  // const handleRefresh = () => {
-  //   fetchNetworkData();
-  // };
+  const handleRefresh = () => {
+    fetchNetworkData();
+  };
 
   return (
     <div className=" min-h-screen">
@@ -84,7 +88,7 @@ function CheckPage() {
         <>
           <div className="flex justify-between items-center my-2 gap-3 text-[9px] md:text-xs flex-col md:flex-row">
             <AddressLink addressFromUrl={addressFromUrl} theme={theme} />{" "}
-            {/* <div className="flex items-center justify-between text-xs">
+             <div className="flex items-center justify-between text-xs">
               <>
                 <div className="flex items-center gap-2">
                   <button
@@ -117,8 +121,8 @@ function CheckPage() {
                   handleModalClose={handleModalClose}
                 />
               </>
-              )}
-            </div> */}
+            
+            </div> 
           </div>
 
           <React.Fragment>

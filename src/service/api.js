@@ -3,19 +3,6 @@ import { ethers } from "ethers";
 
 const ETHERSCAN_API_KEY = process.env.REACT_APP_ETHERSCAN_API_KEY2;
 
-//ETH BALANCE
-
-// export const getPrice = async (symbol) => {
-//   try {
-//     const response = await axios.get(
-//       ` https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=usd`
-//     );
-//     return response.data.USD;
-//   } catch (error) {
-//     console.error(`Error fetching price for ${symbol}:`, error);
-//     throw error;
-//   }
-// };
 
 const priceCache = {};
 
@@ -33,7 +20,6 @@ export const getPrice = async (symbol) => {
 
     const price = response.data.USD;
 
-    // Cache the price for 5 minutes (300 seconds)
     priceCache[symbol] = price;
 
     return price || 0;

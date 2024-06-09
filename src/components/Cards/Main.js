@@ -17,6 +17,7 @@ import ChainSummary from "./ChainSummary";
 import OptimismSimulation from "../Simulations";
 
 import ScoreFunctionsOP from "../Functions/scoreFunctions";
+import AnalysisCard from "./AnalysisCard";
 
 function CardsPlus({ networkData, addressFromUrl }) {
   const { theme } = useContext(ThemeContext);
@@ -72,6 +73,7 @@ function CardsPlus({ networkData, addressFromUrl }) {
           nftUniqueCount={networkData?.Tokens?.nftUniqueCount}
         />
       </div>
+      <AnalysisCard data={networkData} userAddress={addressFromUrl} />
       <ChainSummary networkData={networkData} theme={theme} />
       <OptimismSimulation networkData={networkData} theme={theme} />
 
